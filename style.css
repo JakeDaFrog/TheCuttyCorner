@@ -2,6 +2,7 @@
 body, h1, p, a {
     margin: 0;
     padding: 0;
+    font-weight: normal; /* Ensure font weight is reset */
 }
 
 /* Basic styles for the body */
@@ -31,7 +32,18 @@ header {
 }
 
 header h1 {
-    font-size: 4rem; /* Adjust the size as needed */
+    font-size: 4rem; /* Adjusted for desktop */
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    white-space: normal; /* Allow wrapping */
+}
+
+header h1 {
+    font-size: clamp(2rem, 6vw, 4rem); /* Responsive size */
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    white-space: normal; /* Allow wrapping */
+    font-weight: bold;
 }
 
 /* Prevent hover underline for the site title */
@@ -108,13 +120,13 @@ nav {
 }
 
 nav a {
+    font-size: clamp(1rem, 3vw, 1.8rem); /* Responsive size */
     color: black;
     text-decoration: none;
-    margin: 0 0.5rem; /* Reduced margin between links */
-    padding: 0.25rem 0.5rem; /* Reduced padding inside links */
+    margin: 0 0.5rem;
+    padding: 0.25rem 0.5rem;
     display: inline-block;
     text-align: center;
-    font-size: 1.8rem; /* Matching "An outdoor-centered blog" size */
     transition: background-color 0.3s;
 }
 
@@ -296,9 +308,10 @@ footer {
 }
 
 .tagline p {
-    font-size: 1.5rem; /* Adjusted size for consistency */
-    font-weight: normal; /* Remove bold style */
+    font-size: clamp(1rem, 4vw, 1.5rem); /* Responsive size */
+    font-weight: normal;
 }
+
 ul {
     font-size: 1.2rem; /* Adjust this value to match your body text size */
     line-height: 1.6; /* Optional: Adjust line spacing for readability */
@@ -349,7 +362,7 @@ ul li {
 }
 
 .quick-links-title {
-    font-size: 1.8rem;
+    font-size: 1.6rem;
     font-weight: bold;
     margin: 0; /* Remove margin */
     padding: 0; /* Remove padding */
@@ -374,4 +387,45 @@ ul li {
     bottom: 10px;
     right: 5px; /* Add some padding on the right */
     z-index: 10000;
+}
+
+
+
+main, header, nav {
+    max-width: 100%; /* Ensures no overflow */
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-size: 16px;
+}
+
+.video-container {
+    position: relative;
+    padding-bottom: 56.25%; /* 16:9 aspect ratio */
+    height: 0;
+    overflow: hidden;
+    max-width: 100%; /* Ensures it doesn’t exceed the parent container */
+    background: #000;
+}
+
+.video-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%; /* Full width of the container */
+    height: 100%; /* Full height of the container */
+    border: none;
+}
+
+/* Fix image width with padding */
+/* Fix image width with padding */
+img {
+    max-width: 100%; /* Prevent overflow */
+    height: auto; /* Maintain aspect ratio */
+    display: inline-block; /* Allow horizontal grouping */
+    margin: 10px; /* Add margin between images */
+    padding: 5px; /* Padding inside the image border */
+    box-sizing: border-box;
 }
