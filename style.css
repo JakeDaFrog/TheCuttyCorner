@@ -1,0 +1,377 @@
+/* Resetting some default margins and paddings */
+body, h1, p, a {
+    margin: 0;
+    padding: 0;
+}
+
+/* Basic styles for the body */
+body {
+    font-family: Times New Roman (serif);
+    margin: 0;
+    padding: 0;
+    background-image: url('images/Home-1.jpg');
+    background-size: cover; /* Ensure it fills the screen */
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed; /* Keeps the background fixed while scrolling */
+    display: grid;
+    grid-template-rows: auto auto auto 1fr;
+    grid-template-columns: 1fr;
+    text-align: center;
+}
+
+/* Title section */
+header {
+    background: #f2f2d2; /* Slightly transparent background */
+    color: black;
+    width: 85%; /* Unified width for all sections */
+    margin: 0.5rem auto; /* Reduced margin */
+    padding: 0.5rem 0; /* Reduced padding */
+    border: 3px solid #52935c;
+}
+
+header h1 {
+    font-size: 4rem; /* Adjust the size as needed */
+}
+
+/* Prevent hover underline for the site title */
+header h1 a {
+    text-decoration: none; /* Remove underline */
+    color: black; /* Keep text color consistent */
+}
+
+header h1 a:hover {
+    text-decoration: none; /* Prevent hover underline */
+    color: inherit; /* Optional: Keep color consistent */
+}
+
+/* New About box title section */
+.about-box-title {
+    background: #f2f2d2; /* Same background as header */
+    color: black;
+    width: 85%; /* Unified width for all sections */
+    margin: 0.5rem auto; /* Reduced margin */
+    padding: 0.25rem 0; /* Reduced padding */
+    border: 3px solid #52935c;
+    text-align: center; /* Center text in this box */
+}
+
+.about-box-title p {
+    font-size: 1.5rem; /* Slightly smaller text size for the title */
+    font-weight: normal;
+}
+
+/* Main content section */
+main {
+    height: unset;
+    min-height: unset;
+    background: #f2f2d2; /* Same transparent background */
+    width: 85%; /* Unified width for all sections */
+    margin: 0.5rem auto; /* Reduced margin */
+    color: black;
+    padding: 0.25rem 0; /* Reduced padding */
+    border: 3px solid #52935c;
+    text-align: center; /* Center text inside main */
+}
+
+/* Ensure containers expand to fit content */
+.about-box {
+    background: #f2f2d2;
+    width: 95%;
+    margin: 0.5rem auto; /* Reduced margin */
+    padding: 0.5rem; /* Reduced padding */
+    color: black;
+    text-align: left;
+    display: block; /* Ensure it behaves like a block container */
+    overflow: visible; /* Allow content to expand naturally */
+    box-sizing: border-box; /* Include padding and border in width/height calculations */
+    padding-bottom: 1rem; /* Ensures space below the box */
+}
+
+/* Adjusted margin and padding for paragraphs in about box */
+.about-box p {
+    font-size: 1.2rem; /* Smaller font size for the text */
+    margin-bottom: 1rem; /* Space between paragraphs */
+    line-height: 1.6; /* Add space between lines of text */
+    text-align: left; /* Ensure text is left justified */
+    padding-left: 0rem; /* Added indent on the left side */
+}
+
+/* Navigation bar section */
+nav {
+    background-color: #f2f2d2;
+    padding: 0.25rem 0; /* Reduced padding */
+    width: 85%; /* Unified width for all sections */
+    margin: 0.5rem auto; /* Reduced margin */
+    border-radius: 0px;
+    border: 3px solid #52935c;
+}
+
+nav a {
+    color: black;
+    text-decoration: none;
+    margin: 0 0.5rem; /* Reduced margin between links */
+    padding: 0.25rem 0.5rem; /* Reduced padding inside links */
+    display: inline-block;
+    text-align: center;
+    font-size: 1.8rem; /* Matching "An outdoor-centered blog" size */
+    transition: background-color 0.3s;
+}
+
+nav a:hover {
+    background-color: #526d93; /* Corrected hex color code */
+    color: white; /* Optional: Change text color on hover for better contrast */
+}
+
+/* Ensure links remain consistent across all pages */
+a {
+    color: black; /* Set link color to black */
+    text-decoration: underline; /* Remove underline */
+}
+
+a:visited {
+    color: black; /* Ensure visited links also appear black */
+}
+
+a:hover {
+    text-decoration: underline; /* Optional: Add underline on hover for better user experience */
+}
+
+/* Prevent extra text or elements from appearing */
+main p {
+    font-size: 1.4rem; /* Matching a slightly smaller About header size */
+    text-align: center; /* Center align "An outdoor-centered blog" */
+}
+
+/* Ensuring no extra spacing below the menu or other sections */
+footer {
+    display: none;
+}
+
+/* Center the h2 "About" title */
+.about-box h2 {
+    text-align: center; /* Centers the "About" heading */
+    margin-bottom: 1rem; /* Adds some space between the heading and paragraph */
+}
+
+/* Adjusted consistent spacing for all boxes */
+.box {
+    width: 85%; /* Unified width for all sections */
+    margin: 1rem auto; /* Reduced margin */
+    padding: 0.5rem; /* Reduced padding */
+    border: 3px solid #52935c;
+    background: #f2f2d2;
+}
+
+/* Styling specifically for the Articles section */
+
+/* Title bar for the Articles page */
+.articles-box-title {
+    background: #f2f2d2;
+    color: black;
+    width: 85%;
+    margin: 0.5rem auto; /* Reduced margin */
+    padding: 0.25rem 0; /* Reduced padding */
+    border: 3px solid #52935c;
+    text-align: center;
+}
+
+.articles-box-title p {
+    font-size: 1.5rem;
+    font-weight: normal;
+}
+
+/* Main content section for articles */
+.articles-box {
+    background: #f2f2d2;
+    width: 100%; /* Match Quick Links Box width */
+    margin: .5rem auto;
+    padding: .5rem;
+    text-align: left;
+    box-sizing: border-box;
+}
+
+.article-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: left;
+    border: none;
+    padding: 0.5rem 1rem; /* Add padding to the left and right */
+    margin: 0;
+    width: 100%;
+    box-sizing: border-box;
+    border-bottom: 1px solid #52935c; /* Add separator line */
+}
+
+.article-item a {
+    font-size: 1.6rem;
+    font-weight: normal;
+    text-decoration: none;
+    color: black;
+    flex-grow: 1;
+    text-align: left; /* Ensure title aligns left */
+}
+
+.article-item a:hover {
+    text-decoration: underline;
+    color: #526d93;
+}
+
+.article-item span {
+    font-size: 1.4rem;
+    text-align: right;
+    color: black;
+    min-width: 120px;
+}
+
+.new-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5rem 0;
+    border-bottom: 1px solid #52935c;
+}
+
+.new-item-title {
+    font-size: 1.6rem;
+    font-weight: ;
+    flex-grow: 1;
+    text-align: left;
+}
+
+.new-item-title a {
+    text-decoration: none;
+    color: black;
+}
+
+.new-item-title a:hover {
+    text-decoration: underline;
+    color: #526d93;
+}
+
+.new-item-date {
+    font-size: 1.4rem;
+    text-align: right;
+    color: black;
+    min-width: 120px;
+}
+
+/* Styling for Trips Box */
+.trips-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    width: 100%;
+    padding: ; /* Remove any padding */
+    text-align: left;
+    gap: 0rem;
+    padding-top:
+    
+}
+
+.trip-header {
+    font-weight: bold;
+    text-align: left; /* Left-align the text */
+    padding: 0.5rem;
+    background-color: #52935c;
+    color: black;
+    margin: 0; /* Remove any margin if there is any */
+}
+
+.trip-item {
+    padding: 0.5rem;
+    border-bottom: 1px solid #52935c;
+}
+
+
+
+/* Style for tagline */
+.tagline {
+    background: #f2f2d2; /* Same background as header */
+    color: black;
+    width: 85%; /* Unified width for all sections */
+    margin: 0.5rem auto; /* Reduced margin */
+    padding: 0.5rem 0; /* Reduced padding */
+    border: 3px solid #52935c;
+    text-align: center; /* Center text */
+}
+
+.tagline p {
+    font-size: 1.5rem; /* Adjusted size for consistency */
+    font-weight: normal; /* Remove bold style */
+}
+ul {
+    font-size: 1.2rem; /* Adjust this value to match your body text size */
+    line-height: 1.6; /* Optional: Adjust line spacing for readability */
+}
+
+ul li {
+    margin-bottom: 0.5rem; /* Optional: Adjust spacing between list items */
+}
+
+
+
+.quick-links-box {
+    background: #f2f2d2;
+    width: 100%; /* Full width of the box */
+    margin: auto;
+    padding: 20px; /* Set the padding to 20px */
+    text-align: left;
+    box-sizing: border-box;
+}
+
+.quick-link-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.5rem 0; /* Reduced padding for a clean look */
+    margin: 0;
+    border-bottom: 1px solid #52935c; /* Only separator between items */
+    width: 100%; /* Full width of the parent */
+}
+
+.quick-link-item a {
+    font-size: 1.6rem;
+    text-decoration: none;
+    color: black;
+    flex-grow: 1;
+    text-align: left;
+}
+
+.quick-link-item span {
+    font-size: 1.4rem;
+    text-align: right;
+    color: black;
+    min-width: 120px;
+}
+
+.quick-link-item a:hover {
+    text-decoration: underline;
+    color: #526d93;
+}
+
+.quick-links-title {
+    font-size: 1.8rem;
+    font-weight: bold;
+    margin: 0; /* Remove margin */
+    padding: 0; /* Remove padding */
+    display: flex;
+    justify-content: space-between;
+}
+
+.quick-links-date {
+    font-weight: bold;
+    text-align: right;
+}
+
+#tracker-container {
+    position: fixed;
+    bottom: 0;
+    right: 10px; /* Add some padding on the right */
+    z-index: 10000;
+}
+
+#tracker-container iframe {
+    position: fixed;
+    bottom: 10px;
+    right: 5px; /* Add some padding on the right */
+    z-index: 10000;
+}

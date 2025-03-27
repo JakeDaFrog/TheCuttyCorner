@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Cutty Corner</title>
+    <link rel="stylesheet" href="style.css"> <!-- Link to the external CSS file -->
+     <!-- Favicons -->
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link rel="icon" href="favicon-32x32.png" sizes="32x32" type="image/png">
+    <link rel="icon" href="favicon-16x16.png" sizes="16x16" type="image/png">
+    <link rel="apple-touch-icon" href="favicon-180x180.png">
+    <script>
+        // Function to change the background image on the landing page
+        document.addEventListener("DOMContentLoaded", () => {
+            const images = [
+                'images/Home-1.jpg', 
+                'images/Home-2.jpg',
+                'images/Home-3.jpg',
+                'images/Home-4.jpg',
+                'images/Home-5.jpg',
+                'images/Home-6.jpg',
+                'images/Home-7.jpg',
+                'images/Home-8.jpg',
+                'images/Home-9.jpg',
+                'images/Home-10.jpg',
+                'images/Home-11.jpg',
+                'images/Home-12.jpg',
+                'images/Home-13.jpg',
+                'images/Home-14.jpg',
+                'images/Home-15.jpg',
+                'images/Home-16.jpg',
+                'images/Home-17.jpg'
+            ];
+            const randomImage = images[Math.floor(Math.random() * images.length)];
+            document.body.style.backgroundImage = `url(${randomImage})`;
+            document.body.style.backgroundSize = 'cover';
+            document.body.style.backgroundPosition = 'center';
+            document.body.style.backgroundRepeat = 'no-repeat';
+        });
+    </script>
+</head>
+<body>
+    <header>
+        <h1>thecuttycorner.com</h1>
+        
+    </header>
+
+    <h2 class="tagline">
+        <p>An outdoor-centered blog with a focus on backcountry activities and sewing</p>
+    </h2>
+    <nav>
+        <a href="articles.html">Articles</a>
+        <a href="trips.html">Trips</a>
+        <a href="videos.html">Videos</a>
+        <a href="about.html">About</a>
+    </nav>
+    <main>
+        <div class="quick-links-box">
+    <h3 class="quick-links-title">Quick Links <span class="quick-links-date">Date:</span></h3>
+    <div class="quick-link-item">
+        <a href="Articles/article-6.html">The Importance of Packing Lists</a>
+        <span>3/20/2025</span>
+    </div>
+    <div class="quick-link-item">
+        <a href="Articles/article-1.html">Getting Started With Bikepacking</a>
+        <span>12/20/2024</span>
+    </div>
+    <div class="quick-link-item">
+        <a href="Articles/article-4.html">Ultralight Pocket Bivy</a>
+        <span>11/3/2024</span>
+    </div>
+    <div class="quick-link-item">
+        <a href="Articles/article-3.html">7.5oz Apex Open-Bottom Quilt</a>
+        <span>11/3/2024</span>
+    </div>
+</div>
+    </main>
+    <div id="tracker-container">
+    <script src="https://efreecode.com/js.js" id="eXF-thecutty-0" async defer></script>
+</div>
+</body>
+</html>
