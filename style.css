@@ -43,7 +43,7 @@ header h1 {
     word-wrap: break-word;
     overflow-wrap: break-word;
     white-space: normal; /* Allow wrapping */
-    font-weight: bold;
+    font-weight: normal;
 }
 
 /* Prevent hover underline for the site title */
@@ -429,3 +429,4 @@ img {
     padding: 5px; /* Padding inside the image border */
     box-sizing: border-box;
 }
+
