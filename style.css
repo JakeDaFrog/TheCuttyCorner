@@ -1,126 +1,126 @@
-/* Resetting some default margins and paddings */
+
 body, h1, p, a {
     margin: 0;
     padding: 0;
-    font-weight: normal; /* Ensure font weight is reset */
+    font-weight: normal; 
 }
 
-/* Basic styles for the body */
+
 body {
     font-family: Times New Roman (serif);
     margin: 0;
     padding: 0;
     background-image: url('images/Home-1.jpg');
-    background-size: cover; /* Ensure it fills the screen */
+    background-size: cover; 
     background-position: center center;
     background-repeat: no-repeat;
-    background-attachment: fixed; /* Keeps the background fixed while scrolling */
+    background-attachment: fixed; 
     display: grid;
     grid-template-rows: auto auto auto 1fr;
     grid-template-columns: 1fr;
     text-align: center;
 }
 
-/* Title section */
+
 header {
-    background: #f2f2d2; /* Slightly transparent background */
+    background: #f2f2d2; 
     color: black;
-    width: 85%; /* Unified width for all sections */
-    margin: 0.5rem auto; /* Reduced margin */
-    padding: 0.5rem 0; /* Reduced padding */
+    width: 85%; 
+    margin: 0.5rem auto; 
+    padding: 0.5rem 0; 
     border: 3px solid #52935c;
 }
 
 header h1 {
-    font-size: 4rem; /* Adjusted for desktop */
+    font-size: 4rem; 
     word-wrap: break-word;
     overflow-wrap: break-word;
-    white-space: normal; /* Allow wrapping */
+    white-space: normal; 
 }
 
 header h1 {
-    font-size: clamp(2rem, 6vw, 4rem); /* Responsive size */
+    font-size: clamp(2rem, 6vw, 4rem); 
     word-wrap: break-word;
     overflow-wrap: break-word;
-    white-space: normal; /* Allow wrapping */
+    white-space: normal; 
     font-weight: normal;
 }
 
-/* Prevent hover underline for the site title */
+
 header h1 a {
-    text-decoration: none; /* Remove underline */
-    color: black; /* Keep text color consistent */
+    text-decoration: none; 
+    color: black; 
 }
 
 header h1 a:hover {
-    text-decoration: none; /* Prevent hover underline */
-    color: inherit; /* Optional: Keep color consistent */
+    text-decoration: none; 
+    color: inherit; 
 }
 
-/* New About box title section */
+
 .about-box-title {
-    background: #f2f2d2; /* Same background as header */
+    background: #f2f2d2; 
     color: black;
-    width: 85%; /* Unified width for all sections */
-    margin: 0.5rem auto; /* Reduced margin */
-    padding: 0.25rem 0; /* Reduced padding */
+    width: 85%; 
+    margin: 0.5rem auto; 
+    padding: 0.25rem 0; 
     border: 3px solid #52935c;
-    text-align: center; /* Center text in this box */
+    text-align: center; 
 }
 
 .about-box-title p {
-    font-size: 1.5rem; /* Slightly smaller text size for the title */
+    font-size: 1.5rem; 
     font-weight: normal;
 }
 
-/* Main content section */
+
 main {
     height: unset;
     min-height: unset;
-    background: #f2f2d2; /* Same transparent background */
-    width: 85%; /* Unified width for all sections */
-    margin: 0.5rem auto; /* Reduced margin */
+    background: #f2f2d2; 
+    width: 85%; 
+    margin: 0.5rem auto; 
     color: black;
-    padding: 0.25rem 0; /* Reduced padding */
+    padding: 0.25rem 0; 
     border: 3px solid #52935c;
-    text-align: center; /* Center text inside main */
+    text-align: center; 
 }
 
-/* Ensure containers expand to fit content */
+
 .about-box {
     background: #f2f2d2;
     width: 95%;
-    margin: 0.5rem auto; /* Reduced margin */
-    padding: 0.5rem; /* Reduced padding */
+    margin: 0.5rem auto; 
+    padding: 0.5rem; 
     color: black;
     text-align: left;
-    display: block; /* Ensure it behaves like a block container */
-    overflow: visible; /* Allow content to expand naturally */
-    box-sizing: border-box; /* Include padding and border in width/height calculations */
-    padding-bottom: 1rem; /* Ensures space below the box */
+    display: block; 
+    overflow: visible; 
+    box-sizing: border-box; 
+    padding-bottom: 1rem; 
 }
 
-/* Adjusted margin and padding for paragraphs in about box */
+
 .about-box p {
-    font-size: 1.2rem; /* Smaller font size for the text */
-    margin-bottom: 1rem; /* Space between paragraphs */
-    line-height: 1.6; /* Add space between lines of text */
-    text-align: left; /* Ensure text is left justified */
-    padding-left: 0rem; /* Added indent on the left side */
+    font-size: 1.2rem; 
+    margin-bottom: 1rem; 
+    line-height: 1.6; 
+    text-align: left; 
+    padding-left: 0rem; 
 }
 
-/* Navigation bar section */
+
 nav {
     background-color: #f2f2d2;
-    padding: 0.25rem 0; /* Reduced padding */
-    width: 85%; /* Unified width for all sections */
-    margin: 0.5rem auto; /* Reduced margin */
+    padding: 0.25rem 0; 
+    width: 85%; 
+    margin: 0.5rem auto; 
     border-radius: 0px;
     border: 3px solid #52935c;
 }
 
 nav a {
-    font-size: clamp(1rem, 3vw, 1.8rem); /* Responsive size */
+    font-size: clamp(1rem, 3vw, 1.8rem); 
     color: black;
     text-decoration: none;
     margin: 0 0.5rem;
@@ -131,59 +131,59 @@ nav a {
 }
 
 nav a:hover {
-    background-color: #526d93; /* Corrected hex color code */
-    color: white; /* Optional: Change text color on hover for better contrast */
+    background-color: #526d93; 
+    color: white; 
 }
 
-/* Ensure links remain consistent across all pages */
+
 a {
-    color: black; /* Set link color to black */
-    text-decoration: underline; /* Remove underline */
+    color: black; 
+    text-decoration: underline; 
 }
 
 a:visited {
-    color: black; /* Ensure visited links also appear black */
+    color: black; 
 }
 
 a:hover {
-    text-decoration: underline; /* Optional: Add underline on hover for better user experience */
+    text-decoration: underline; 
 }
 
-/* Prevent extra text or elements from appearing */
+
 main p {
-    font-size: 1.4rem; /* Matching a slightly smaller About header size */
-    text-align: center; /* Center align "An outdoor-centered blog" */
+    font-size: 1.4rem; 
+    text-align: center; 
 }
 
-/* Ensuring no extra spacing below the menu or other sections */
+
 footer {
     display: none;
 }
 
-/* Center the h2 "About" title */
+
 .about-box h2 {
-    text-align: center; /* Centers the "About" heading */
-    margin-bottom: 1rem; /* Adds some space between the heading and paragraph */
+    text-align: center; 
+    margin-bottom: 1rem; 
 }
 
-/* Adjusted consistent spacing for all boxes */
+
 .box {
-    width: 85%; /* Unified width for all sections */
-    margin: 1rem auto; /* Reduced margin */
-    padding: 0.5rem; /* Reduced padding */
+    width: 85%; 
+    margin: 1rem auto; 
+    padding: 0.5rem; 
     border: 3px solid #52935c;
     background: #f2f2d2;
 }
 
-/* Styling specifically for the Articles section */
 
-/* Title bar for the Articles page */
+
+
 .articles-box-title {
     background: #f2f2d2;
     color: black;
     width: 85%;
-    margin: 0.5rem auto; /* Reduced margin */
-    padding: 0.25rem 0; /* Reduced padding */
+    margin: 0.5rem auto; 
+    padding: 0.25rem 0; 
     border: 3px solid #52935c;
     text-align: center;
 }
@@ -193,10 +193,10 @@ footer {
     font-weight: normal;
 }
 
-/* Main content section for articles */
+
 .articles-box {
     background: #f2f2d2;
-    width: 100%; /* Match Quick Links Box width */
+    width: 100%; 
     margin: .5rem auto;
     padding: .5rem;
     text-align: left;
@@ -208,11 +208,11 @@ footer {
     justify-content: space-between;
     align-items: left;
     border: none;
-    padding: 0.5rem 1rem; /* Add padding to the left and right */
+    padding: 0.5rem 1rem; 
     margin: 0;
     width: 100%;
     box-sizing: border-box;
-    border-bottom: 1px solid #52935c; /* Add separator line */
+    border-bottom: 1px solid #52935c; 
 }
 
 .article-item a {
@@ -221,7 +221,7 @@ footer {
     text-decoration: none;
     color: black;
     flex-grow: 1;
-    text-align: left; /* Ensure title aligns left */
+    text-align: left; 
 }
 
 .article-item a:hover {
@@ -268,12 +268,12 @@ footer {
     min-width: 120px;
 }
 
-/* Styling for Trips Box */
+
 .trips-container {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     width: 100%;
-    padding: ; /* Remove any padding */
+    padding: ; 
     text-align: left;
     gap: 0rem;
     padding-top:
@@ -282,11 +282,11 @@ footer {
 
 .trip-header {
     font-weight: bold;
-    text-align: left; /* Left-align the text */
+    text-align: left; 
     padding: 0.5rem;
     background-color: #52935c;
     color: black;
-    margin: 0; /* Remove any margin if there is any */
+    margin: 0; 
 }
 
 .trip-item {
@@ -296,38 +296,38 @@ footer {
 
 
 
-/* Style for tagline */
+
 .tagline {
-    background: #f2f2d2; /* Same background as header */
+    background: #f2f2d2; 
     color: black;
-    width: 85%; /* Unified width for all sections */
-    margin: 0.5rem auto; /* Reduced margin */
-    padding: 0.5rem 0; /* Reduced padding */
+    width: 85%; 
+    margin: 0.5rem auto; 
+    padding: 0.5rem 0; 
     border: 3px solid #52935c;
-    text-align: center; /* Center text */
+    text-align: center; 
 }
 
 .tagline p {
-    font-size: clamp(1rem, 4vw, 1.5rem); /* Responsive size */
+    font-size: clamp(1rem, 4vw, 1.5rem); 
     font-weight: normal;
 }
 
 ul {
-    font-size: 1.2rem; /* Adjust this value to match your body text size */
-    line-height: 1.6; /* Optional: Adjust line spacing for readability */
+    font-size: 1.2rem; 
+    line-height: 1.6; 
 }
 
 ul li {
-    margin-bottom: 0.5rem; /* Optional: Adjust spacing between list items */
+    margin-bottom: 0.5rem; 
 }
 
 
 
 .quick-links-box {
     background: #f2f2d2;
-    width: 100%; /* Full width of the box */
+    width: 100%; 
     margin: auto;
-    padding: 20px; /* Set the padding to 20px */
+    padding: 20px; 
     text-align: left;
     box-sizing: border-box;
 }
@@ -335,10 +335,10 @@ ul li {
 .quick-link-item {
     display: flex;
     justify-content: space-between;
-    padding: 0.5rem 0; /* Reduced padding for a clean look */
+    padding: 0.5rem 0; 
     margin: 0;
-    border-bottom: 1px solid #52935c; /* Only separator between items */
-    width: 100%; /* Full width of the parent */
+    border-bottom: 1px solid #52935c; 
+    width: 100%; 
 }
 
 .quick-link-item a {
@@ -364,8 +364,8 @@ ul li {
 .quick-links-title {
     font-size: 1.6rem;
     font-weight: bold;
-    margin: 0; /* Remove margin */
-    padding: 0; /* Remove padding */
+    margin: 0; 
+    padding: 0; 
     display: flex;
     justify-content: space-between;
 }
@@ -378,21 +378,21 @@ ul li {
 #tracker-container {
     position: fixed;
     bottom: 0;
-    right: 10px; /* Add some padding on the right */
+    right: 10px; 
     z-index: 10000;
 }
 
 #tracker-container iframe {
     position: fixed;
     bottom: 10px;
-    right: 5px; /* Add some padding on the right */
+    right: 5px; 
     z-index: 10000;
 }
 
 
 
 main, header, nav {
-    max-width: 100%; /* Ensures no overflow */
+    max-width: 100%; 
 }
 
 body {
@@ -403,10 +403,10 @@ body {
 
 .video-container {
     position: relative;
-    padding-bottom: 56.25%; /* 16:9 aspect ratio */
+    padding-bottom: 56.25%; 
     height: 0;
     overflow: hidden;
-    max-width: 100%; /* Ensures it doesn’t exceed the parent container */
+    max-width: 100%; 
     background: #000;
 }
 
@@ -414,19 +414,19 @@ body {
     position: absolute;
     top: 0;
     left: 0;
-    width: 100%; /* Full width of the container */
-    height: 100%; /* Full height of the container */
+    width: 100%; 
+    height: 100%; 
     border: none;
 }
 
-/* Fix image width with padding */
-/* Fix image width with padding */
+
+
 img {
-    max-width: 100%; /* Prevent overflow */
-    height: auto; /* Maintain aspect ratio */
-    display: inline-block; /* Allow horizontal grouping */
-    margin: 10px; /* Add margin between images */
-    padding: 5px; /* Padding inside the image border */
+    max-width: 100%; 
+    height: auto; 
+    display: inline-block; 
+    margin: 10px; 
+    padding: 5px; 
     box-sizing: border-box;
 }
 
