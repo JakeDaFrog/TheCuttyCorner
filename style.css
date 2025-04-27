@@ -173,13 +173,12 @@ nav ul li a:hover {
 
 .video-item {
   margin-bottom: 40px;
-  max-width: 800px;
+  max-width: 80%;
 }
 
 .video-container {
   position: relative;
-  width: 100%;
-  max-width: 560px; /* regular readable video width */
+  width: 80%;
   height: auto;
   aspect-ratio: 16 / 9;
   overflow: hidden;
