@@ -208,7 +208,7 @@ nav ul li a:hover {
 }
 
 
-/* === Articles Page === */
+/* Query Elements */
 
 .image-gallery {
   display: flex;
@@ -216,4 +216,10 @@ nav ul li a:hover {
   justify-content: center;
   gap: 16px;
   margin: 20px 0;
+}
+
+@media (max-width: 600px) {
+  #latest-trip div {
+    flex-direction: column !important;
+  }
 }
