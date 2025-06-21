@@ -147,9 +147,10 @@ nav ul li a:hover {
 
 .trip-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: repeat(3, minmax(150px, 1fr));
   gap: 10px 20px;
-  align-items: start;
+  align-items: stretch;
+  font-size: clamp(0.9rem, 1.2vw, 1.1rem);
 }
 
 .trip-header {
@@ -157,19 +158,27 @@ nav ul li a:hover {
   color: #5a9135;
   border-bottom: 2px solid #5a9135;
   padding-bottom: 5px;
+  text-align: left;
+  font-size: clamp(1rem, 1.4vw, 1.2rem);
 }
 
 .trip-item {
-  padding: 4px 0;
+  padding: 8px 6px;
   border-bottom: 1px solid #ccc;
-  word-break: break-word;
+  white-space: normal; /* allow wrapping */
+  word-break: break-word; /* avoid overflow */
+  overflow-wrap: break-word;
+  display: flex;
+  align-items: flex-start; /* align text to the top */
 }
 
+/* Remove the collapsing behavior on small screens */
 @media screen and (max-width: 768px) {
   .trip-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(3, minmax(150px, 1fr));
   }
 }
+
 
 .video-item {
   margin-bottom: 40px;
