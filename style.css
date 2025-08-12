@@ -23,7 +23,7 @@ body {
 }
 
 .site-banner {
-  width: 60%;
+  width: 50%;
   height: auto;
   display: block;
   margin: 0 auto 50px auto;
@@ -150,7 +150,7 @@ nav ul li a:hover {
   grid-template-columns: repeat(3, minmax(150px, 1fr));
   gap: 10px 20px;
   align-items: stretch;
-  font-size: clamp(0.9rem, 1.2vw, 1.1rem);
+  font-size: clamp(0.5rem, 1.2vw, 1.1rem);
 }
 
 .trip-header {
