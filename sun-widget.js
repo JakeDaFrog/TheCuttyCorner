@@ -3,13 +3,30 @@
   const sunriseEl = document.getElementById("sunrise-time");
   const sunsetEl = document.getElementById("sunset-time");
   const graphEl = document.getElementById("daylight-wave");
+  const widgetInner = document.querySelector(".sun-widget-inner");
 
-  if (!locationEl || !sunriseEl || !sunsetEl || !graphEl) {
+  if (!locationEl || !sunriseEl || !sunsetEl || !graphEl || !widgetInner) {
     return;
   }
 
-  const setError = () => {
-    locationEl.textContent = "Location unavailable";
+  const STORAGE_KEY = "cutty_sun_widget_location";
+  const AUTO_LOCATION_ID = "auto";
+
+  // Edit this list to your preferred locations.
+  const LOCATION_OPTIONS = [
+    { id: AUTO_LOCATION_ID, label: "Auto (Current Location)" },
+    { id: "bellingham", label: "Bellingham, WA", latitude: 48.7519, longitude: -122.4787, timeZone: "America/Los_Angeles" },
+    { id: "berkeley", label: "Berkeley, CA", latitude: 37.8715, longitude: -122.2730, timeZone: "America/Los_Angeles" },
+    { id: "big-sur", label: "Big Sur, CA", latitude: 36.2704, longitude: -121.8081, timeZone: "America/Los_Angeles" },
+    { id: "bishop", label: "Bishop, CA", latitude: 37.3614, longitude: -118.3997, timeZone: "America/Los_Angeles" },
+    { id: "slo", label: "San Luis Obispo, CA", latitude: 35.2828, longitude: -120.6596, timeZone: "America/Los_Angeles" },
+    { id: "santa-barbara", label: "Santa Barbara, CA", latitude: 34.4208, longitude: -119.6982, timeZone: "America/Los_Angeles" },
+    { id: "whitefish", label: "Whitefish, MT", latitude: 48.4111, longitude: -114.3376, timeZone: "America/Denver" },
+    { id: "wolfeboro", label: "Wolfeboro, NH", latitude: 43.5845, longitude: -71.2151, timeZone: "America/New_York" }
+  ];
+
+  const setError = (label = "Location unavailable") => {
+    locationEl.textContent = label;
     sunriseEl.textContent = "--:--";
     sunsetEl.textContent = "--:--";
   };
@@ -92,38 +109,102 @@
     ctx.fillText(label, Math.max(4, tx), ty);
   };
 
-  const loadSunWidget = async () => {
+  const createLocationDropdown = () => {
+    const select = document.createElement("select");
+    select.id = "sun-location-select";
+    select.className = "sun-location-select";
+    select.setAttribute("aria-label", "Select sunrise and sunset location");
+
+    LOCATION_OPTIONS.forEach((loc) => {
+      const option = document.createElement("option");
+      option.value = loc.id;
+      option.textContent = loc.label;
+      select.appendChild(option);
+    });
+
+    const graphWrap = widgetInner.querySelector(".sun-graph-wrap");
+    if (graphWrap) {
+      widgetInner.insertBefore(select, graphWrap);
+    } else {
+      widgetInner.appendChild(select);
+    }
+    return select;
+  };
+
+  const fetchAutoLocation = async () => {
+    const geoRes = await fetch("https://ipwho.is/");
+    const geo = await geoRes.json();
+
+    if (!geo.success || !geo.latitude || !geo.longitude) {
+      throw new Error("Auto-location failed");
+    }
+
+    const city = geo.city || "Approximate location";
+    const region = geo.region || "";
+    return {
+      label: region ? `${city}, ${region}` : city,
+      latitude: Number(geo.latitude),
+      longitude: Number(geo.longitude),
+      timeZone: geo.timezone && geo.timezone.id
+        ? geo.timezone.id
+        : Intl.DateTimeFormat().resolvedOptions().timeZone
+    };
+  };
+
+  const fetchSunTimes = async (latitude, longitude) => {
+    const sunRes = await fetch(
+      `https://api.sunrise-sunset.org/json?lat=${latitude}&lng=${longitude}&formatted=0`
+    );
+    const sunData = await sunRes.json();
+    if (!sunData.results || !sunData.results.sunrise || !sunData.results.sunset) {
+      throw new Error("Sun data unavailable");
+    }
+    return sunData.results;
+  };
+
+  const loadForLocation = async (locationId) => {
     try {
-      const geoRes = await fetch("https://ipwho.is/");
-      const geo = await geoRes.json();
-
-      if (!geo.success || !geo.latitude || !geo.longitude) {
-        setError();
-        return;
+      let chosen;
+      if (locationId === AUTO_LOCATION_ID) {
+        chosen = await fetchAutoLocation();
+      } else {
+        const selected = LOCATION_OPTIONS.find((loc) => loc.id === locationId);
+        if (!selected || typeof selected.latitude !== "number" || typeof selected.longitude !== "number") {
+          throw new Error("Invalid selected location");
+        }
+        chosen = {
+          label: selected.label,
+          latitude: selected.latitude,
+          longitude: selected.longitude,
+          timeZone: selected.timeZone || Intl.DateTimeFormat().resolvedOptions().timeZone
+        };
       }
 
-      const city = geo.city || "Approximate location";
-      const region = geo.region || "";
-      locationEl.textContent = region ? `${city}, ${region}` : city;
-      drawDaylightWave(Number(geo.latitude));
+      locationEl.textContent = chosen.label;
+      drawDaylightWave(chosen.latitude);
 
-      const sunRes = await fetch(
-        `https://api.sunrise-sunset.org/json?lat=${geo.latitude}&lng=${geo.longitude}&formatted=0`
-      );
-      const sunData = await sunRes.json();
-
-      if (!sunData.results || !sunData.results.sunrise || !sunData.results.sunset) {
-        setError();
-        return;
-      }
-
-      const tz = geo.timezone && geo.timezone.id ? geo.timezone.id : Intl.DateTimeFormat().resolvedOptions().timeZone;
-      sunriseEl.textContent = formatTime(sunData.results.sunrise, tz);
-      sunsetEl.textContent = formatTime(sunData.results.sunset, tz);
+      const sunResults = await fetchSunTimes(chosen.latitude, chosen.longitude);
+      sunriseEl.textContent = formatTime(sunResults.sunrise, chosen.timeZone);
+      sunsetEl.textContent = formatTime(sunResults.sunset, chosen.timeZone);
     } catch (_err) {
-      setError();
+      setError("Sun data unavailable");
     }
   };
 
-  loadSunWidget();
+  const init = async () => {
+    const locationSelect = createLocationDropdown();
+    const stored = localStorage.getItem(STORAGE_KEY);
+    const validStored = LOCATION_OPTIONS.some((loc) => loc.id === stored) ? stored : AUTO_LOCATION_ID;
+    locationSelect.value = validStored;
+
+    locationSelect.addEventListener("change", async (event) => {
+      const nextId = event.target.value;
+      localStorage.setItem(STORAGE_KEY, nextId);
+      await loadForLocation(nextId);
+    });
+
+    await loadForLocation(validStored);
+  };
+
+  init();
 })();
