@@ -21,7 +21,7 @@ const featuredArticles = [
   {
     title: "2025 Tour De Los Padres Bike and Gear Breakdown",
     link: "Articles/Article-8.html",
-    quote: "Above is a video where I walk through my bikepacking setup and gear for the 2025 Tour de Los Padres, including a detailed spreadsheet of all equipment.",
+    quote: "Here is a video where I walk through my bikepacking setup and gear for the 2025 Tour de Los Padres, including a detailed spreadsheet of all equipment.",
     image: "images/Article-8-1-.jpg"
   },
   {
