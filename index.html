@@ -4,13 +4,50 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+  <meta http-equiv="Pragma" content="no-cache" />
+  <meta http-equiv="Expires" content="0" />
   <title>The Cutty Corner</title>
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="style.css?v=20260211-13" />
 </head>
 
 <body>
   <div class="floating-frame">
-    <img src="images/title.png" alt="The Cutty Corner" class="site-banner">
+    <div class="header-row">
+      <div class="moon-widget">
+        <div class="moon-widget-inner">
+          <div class="moon-widget-title">CURRENT MOON</div>
+          <div class="moon-widget-content">
+            <canvas id="moon-canvas" class="moon-canvas" width="56" height="56" aria-label="Moon phase graphic"></canvas>
+            <div class="moon-widget-details">
+              <div id="moon-phase-name">Loading...</div>
+              <div><span id="moon-illumination">--</span>% of Full</div>
+              <div>Age: <span id="moon-age">--</span>d</div>
+              <div>Next Full: <span id="next-full-moon">--</span></div>
+              <div class="moon-hemisphere">N. HEMISPHERE</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <img src="images/title.png" alt="The Cutty Corner" class="site-banner">
+      <div class="sun-widget" id="sun-widget">
+        <div class="sun-widget-inner">
+          <div class="sun-widget-location" id="sun-location">Loading...</div>
+          <div class="sun-widget-row">
+            <span class="sun-label">Sunrise</span>
+            <span id="sunrise-time">--:--</span>
+          </div>
+          <div class="sun-widget-row">
+            <span class="sun-label">Sunset</span>
+            <span id="sunset-time">--:--</span>
+          </div>
+          <div class="sun-graph-wrap">
+            <canvas id="daylight-wave" class="sun-graph-canvas" width="164" height="42" aria-label="Daylight time wave graph"></canvas>
+          </div>
+        </div>
+      </div>
+    </div>
 
     <nav class="text-nav">
       <ul>
@@ -66,10 +103,13 @@
         </a>
       </div>
     </section>
+
   </div>
 
-  <script src="background-rotate.js"></script>
-  <script src="featured-articles.js"></script>
+  <script src="background-rotate.js?v=20260211-1"></script>
+  <script src="featured-articles.js?v=20260211-1"></script>
+  <script src="moon-widget.js?v=20260211-4"></script>
+  <script src="sun-widget.js?v=20260211-4"></script>
 
   <div id="tracker-container">
     <script src="https://efreecode.com/js.js" id="eXF-thecutty-0" async defer></script>
