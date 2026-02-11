@@ -1,44 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>The Cutty Corner</title>
   <link rel="stylesheet" href="style.css" />
 </head>
+
 <body>
   <div class="floating-frame">
-
     <img src="images/title.png" alt="The Cutty Corner" class="site-banner">
-<nav class="text-nav">
-  <ul>
-    <li><a href="articles.html">Articles</a></li>
-    <li><a href="trips.html">Trip Log</a></li>
-    <li><a href="videos.html">Videos</a></li>
-    <li><a href="about.html">About</a></li>
-  </ul>
-</nav>
 
+    <nav class="text-nav">
+      <ul>
+        <li><a href="articles.html">Articles</a></li>
+        <li><a href="trips.html">Trip Log</a></li>
+        <li><a href="videos.html">Videos</a></li>
+        <li><a href="about.html">About</a></li>
+      </ul>
+    </nav>
 
     <section id="articles" class="section-box bordered-box">
-      <h2>Recent Articles</h2>
-      
+      <div class="articles-header">
+        <h2>Selected Articles</h2>
+        <span class="date-header">Date Posted</span>
+      </div>
       <div class="quick-link-item">
         <a href="Articles/Article-12.html">Winter Hot Springs Bikepacking</a>
         <span>02/05/2026</span>
       </div>
-        <div class="quick-link-item">
+      <div class="quick-link-item">
         <a href="Articles/Article-11.html">Arroyo Seco Overnighter January 2026</a>
         <span>01/12/2026</span>
       </div>
-        <div class="quick-link-item">
+      <div class="quick-link-item">
         <a href="Articles/Article-10.html">Arroyo Seco Summer Activities</a>
         <span>12/02/2025</span>
       </div>
-       <div class="quick-link-item">
+      <div class="quick-link-item">
         <a href="Articles/Article-8.html">2025 Tour De Los Padres Bike and Gear Breakdown</a>
         <span>04/26/2025</span>
-      </div>  
+      </div>
       <div class="quick-link-item">
         <a href="Articles/Article-1.html">Getting Started With Bikepacking</a>
         <span>12/20/2024</span>
@@ -49,29 +52,28 @@
       </div>
     </section>
 
-<section id="latest-trip" class="section-box bordered-box">
-  <div style="display: flex; flex-wrap: wrap; align-items: stretch; gap: 16px;">
-    <div style="flex: 1;">
-      <h2>Read This!</h2>
-      <p style="margin: 0; line-height: 1.6;">
-        <strong>High flows and a good bush-whack in the northen Los Padres<br>
-        <a href="Articles/Article-11.html">Take a peek →</a>
-      </p>
-    </div>
-    <a href="Articles/Article-11.html" style="flex: 1;">
-     <img src="../images/Article-11-11.JPG" alt="Trip Preview"
-     style="width: 300px; height: auto; object-fit: cover; border: 2px solid #5a9135; border-radius: 6px; float: right; margin-left: 20px;" />
-
-    </a>
-  </div>
-</section>
-      
+    <section id="latest-trip" class="section-box bordered-box">
+      <div class="featured-article">
+        <div class="featured-content">
+          <h2>Read This!</h2>
+          <p class="featured-description">
+            <strong>High flows and a good bush-whack in the northern Los Padres</strong><br>
+            <a href="Articles/Article-11.html">Take a peek →</a>
+          </p>
+        </div>
+        <a href="Articles/Article-11.html" class="featured-image-link">
+          <img src="images/Article-11-11.JPG" alt="Trip Preview" class="featured-image" />
+        </a>
+      </div>
+    </section>
   </div>
 
- <script src="background-rotate.js"></script>
+  <script src="background-rotate.js"></script>
+  <script src="featured-articles.js"></script>
 
-<div id="tracker-container" style="position: fixed; bottom: 5px; right: 5px; z-index: 1000; transform: scale(0.7); opacity: 0.5;">
-  <script src="https://efreecode.com/js.js" id="eXF-thecutty-0" async defer></script>
-</div>
+  <div id="tracker-container">
+    <script src="https://efreecode.com/js.js" id="eXF-thecutty-0" async defer></script>
+  </div>
 </body>
+
 </html>

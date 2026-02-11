@@ -15,16 +15,22 @@ const homeBackgrounds = [
   '../images/Home-14.jpg',
   '../images/Home-15.jpg',
   '../images/Home-16.jpg',
-  '../images/Home-17.jpg'
+  '../images/Home-18.jpg',
+  '../images/Home-19.jpg',
+  '../images/Home-20.jpg'
 ];
 
-let bgIndex = Math.floor(Math.random() * homeBackgrounds.length);
+// Check if user already has a background picked for this session
+let bgIndex = sessionStorage.getItem('bgIndex');
 
-const cycleBackground = () => {
-  document.body.style.backgroundImage = `url('${homeBackgrounds[bgIndex]}')`;
-  bgIndex = (bgIndex + 1) % homeBackgrounds.length;
-};
+if (bgIndex === null) {
+  // First visit of the session - pick a random background and save it
+  bgIndex = Math.floor(Math.random() * homeBackgrounds.length);
+  sessionStorage.setItem('bgIndex', bgIndex);
+} else {
+  // Convert from string back to number
+  bgIndex = parseInt(bgIndex);
+}
 
-cycleBackground();
-setInterval(cycleBackground, 20000);
-x
+// Set the background image and keep it for the entire session
+document.body.style.backgroundImage = `url('${homeBackgrounds[bgIndex]}')`;
