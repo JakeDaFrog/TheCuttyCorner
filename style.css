@@ -61,6 +61,27 @@ body {
   width: min(96%, 1020px);
 }
 
+.article-page .site-banner {
+  width: min(96%, 1020px);
+  max-width: 100%;
+  display: block;
+  margin: 0 auto 12px;
+  box-sizing: border-box;
+  border-color: #4f6f2f;
+  box-shadow: 0 6px 12px #5a9135;
+}
+
+.article-page .articles-description {
+  width: min(96%, 1020px);
+  max-width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  box-sizing: border-box;
+  border-color: #4f6f2f;
+  color: #333;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.16);
+}
+
 .page-main .section-box.bordered-box {
   background-color: #f3edd1;
 }
