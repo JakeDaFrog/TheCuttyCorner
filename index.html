@@ -8,108 +8,149 @@
   <meta http-equiv="Pragma" content="no-cache" />
   <meta http-equiv="Expires" content="0" />
   <title>The Cutty Corner</title>
-  <link rel="stylesheet" href="style.css?v=20260211-13" />
+  <link rel="stylesheet" href="style.css?v=20260212-45" />
 </head>
 
-<body>
+<body class="page-main home-preview-v1 ntff-inspired">
   <div class="floating-frame">
     <div class="header-row">
-      <div class="moon-widget">
-        <div class="moon-widget-inner">
-          <div class="moon-widget-title">CURRENT MOON</div>
-          <div class="moon-widget-content">
-            <canvas id="moon-canvas" class="moon-canvas" width="56" height="56" aria-label="Moon phase graphic"></canvas>
-            <div class="moon-widget-details">
-              <div id="moon-phase-name">Loading...</div>
-              <div><span id="moon-illumination">--</span>% of Full</div>
-              <div>Age: <span id="moon-age">--</span>d</div>
-              <div>Next Full: <span id="next-full-moon">--</span></div>
-              <div class="moon-hemisphere">N. HEMISPHERE</div>
+      <img src="images/title.png" alt="The Cutty Corner" class="site-banner">
+      <nav class="text-nav">
+        <ul>
+          <li><a href="articles.html">Articles</a></li>
+          <li><a href="trips.html">Trip Log</a></li>
+          <li><a href="videos.html">Videos</a></li>
+          <li><a href="about.html">About</a></li>
+        </ul>
+      </nav>
+    </div>
+
+    <div class="home-main-layout">
+      <div class="home-main-column">
+        <div class="section-divider" aria-hidden="true"></div>
+
+        <section id="articles" class="section-box bordered-box">
+          <div class="articles-header">
+            <h2>Selected Articles</h2>
+            <span class="date-header">Date Posted</span>
+          </div>
+          <div class="quick-link-item">
+            <a href="Articles/Article-12.html">Winter Hot Springs Bikepacking</a>
+            <span>02/05/2026</span>
+          </div>
+          <div class="quick-link-item">
+            <a href="Articles/Article-11.html">Arroyo Seco Overnighter January 2026</a>
+            <span>01/12/2026</span>
+          </div>
+          <div class="quick-link-item">
+            <a href="Articles/Article-10.html">Arroyo Seco Summer Activities</a>
+            <span>12/02/2025</span>
+          </div>
+          <div class="quick-link-item">
+            <a href="Articles/Article-8.html">2025 Tour De Los Padres Bike and Gear Breakdown</a>
+            <span>04/26/2025</span>
+          </div>
+          <div class="quick-link-item">
+            <a href="Articles/Article-1.html">Getting Started With Bikepacking</a>
+            <span>12/20/2024</span>
+          </div>
+          <div class="quick-link-item">
+            <a href="Articles/Article-2.html">Half Dome in One Fell Swoop</a>
+            <span>12/18/2024</span>
+          </div>
+        </section>
+
+        <div class="section-divider" aria-hidden="true"></div>
+        <section id="latest-trip" class="section-box bordered-box">
+          <div class="featured-article">
+            <div class="featured-content">
+              <h2>Read This!</h2>
+              <p class="featured-description">
+                <strong>High flows and a good bush-whack in the northern Los Padres</strong><br>
+                <a href="Articles/Article-11.html">Take a peek →</a>
+              </p>
+            </div>
+            <a href="Articles/Article-11.html" class="featured-image-link">
+              <img src="images/Article-11-11.JPG" alt="Trip Preview" class="featured-image" />
+            </a>
+          </div>
+        </section>
+      </div>
+
+      <aside class="home-sidebar" aria-label="Sidebar">
+        <section class="photo-of-day-card" aria-label="Photo of the day">
+          <a id="photo-of-day-link" class="photo-of-day-link" href="#" aria-label="Open photo of the day">
+            <img id="photo-of-day-image" class="photo-of-day-image" src="" alt="Photo of the day" loading="lazy">
+          </a>
+        </section>
+
+        <div class="moon-widget">
+          <div class="moon-widget-inner">
+            <div class="moon-widget-title">CURRENT MOON</div>
+            <div class="moon-widget-content">
+              <canvas id="moon-canvas" class="moon-canvas" width="56" height="56" aria-label="Moon phase graphic"></canvas>
+              <div class="moon-widget-details">
+                <div id="moon-phase-name">Loading...</div>
+                <div><span id="moon-illumination">--</span>% of Full</div>
+                <div>Age: <span id="moon-age">--</span>d</div>
+                <div>Next Full: <span id="next-full-moon">--</span></div>
+                <div class="moon-hemisphere">N. HEMISPHERE</div>
+              </div>
             </div>
           </div>
         </div>
-      </div>
 
-      <img src="images/title.png" alt="The Cutty Corner" class="site-banner">
-      <div class="sun-widget" id="sun-widget">
-        <div class="sun-widget-inner">
-          <div class="sun-widget-location" id="sun-location">Loading...</div>
-          <div class="sun-widget-row">
-            <span class="sun-label">Sunrise</span>
-            <span id="sunrise-time">--:--</span>
-          </div>
-          <div class="sun-widget-row">
-            <span class="sun-label">Sunset</span>
-            <span id="sunset-time">--:--</span>
-          </div>
-          <div class="sun-graph-wrap">
-            <canvas id="daylight-wave" class="sun-graph-canvas" width="164" height="42" aria-label="Daylight time wave graph"></canvas>
+        <div class="sun-widget" id="sun-widget">
+          <div class="sun-widget-inner">
+            <div class="sun-widget-location" id="sun-location">Loading...</div>
+            <div class="sun-widget-row">
+              <span class="sun-label">Sunrise</span>
+              <span id="sunrise-time">--:--</span>
+            </div>
+            <div class="sun-widget-row">
+              <span class="sun-label">Sunset</span>
+              <span id="sunset-time">--:--</span>
+            </div>
+            <div class="sun-graph-wrap">
+              <canvas id="daylight-wave" class="sun-graph-canvas" width="164" height="42" aria-label="Daylight time wave graph"></canvas>
+            </div>
           </div>
         </div>
-      </div>
+
+        <div class="weather-widget" id="weather-widget">
+          <div class="weather-widget-inner">
+            <div class="weather-widget-title">Current Weather</div>
+            <div class="weather-widget-location" id="weather-location">Loading...</div>
+            <div class="weather-widget-row">
+              <span class="weather-label">Temp</span>
+              <span id="weather-temp">--</span>
+            </div>
+            <div class="weather-widget-row">
+              <span class="weather-label">High / Low</span>
+              <span id="weather-high-low">-- / --</span>
+            </div>
+            <div class="weather-widget-row">
+              <span class="weather-label">Wind</span>
+              <span id="weather-wind">--</span>
+            </div>
+            <div class="weather-widget-row">
+              <span class="weather-label">Conditions</span>
+              <span id="weather-conditions">--</span>
+            </div>
+          </div>
+        </div>
+      </aside>
+
     </div>
-
-    <nav class="text-nav">
-      <ul>
-        <li><a href="articles.html">Articles</a></li>
-        <li><a href="trips.html">Trip Log</a></li>
-        <li><a href="videos.html">Videos</a></li>
-        <li><a href="about.html">About</a></li>
-      </ul>
-    </nav>
-
-    <section id="articles" class="section-box bordered-box">
-      <div class="articles-header">
-        <h2>Selected Articles</h2>
-        <span class="date-header">Date Posted</span>
-      </div>
-      <div class="quick-link-item">
-        <a href="Articles/Article-12.html">Winter Hot Springs Bikepacking</a>
-        <span>02/05/2026</span>
-      </div>
-      <div class="quick-link-item">
-        <a href="Articles/Article-11.html">Arroyo Seco Overnighter January 2026</a>
-        <span>01/12/2026</span>
-      </div>
-      <div class="quick-link-item">
-        <a href="Articles/Article-10.html">Arroyo Seco Summer Activities</a>
-        <span>12/02/2025</span>
-      </div>
-      <div class="quick-link-item">
-        <a href="Articles/Article-8.html">2025 Tour De Los Padres Bike and Gear Breakdown</a>
-        <span>04/26/2025</span>
-      </div>
-      <div class="quick-link-item">
-        <a href="Articles/Article-1.html">Getting Started With Bikepacking</a>
-        <span>12/20/2024</span>
-      </div>
-      <div class="quick-link-item">
-        <a href="Articles/Article-2.html">Half Dome in One Fell Swoop</a>
-        <span>12/18/2024</span>
-      </div>
-    </section>
-
-    <section id="latest-trip" class="section-box bordered-box">
-      <div class="featured-article">
-        <div class="featured-content">
-          <h2>Read This!</h2>
-          <p class="featured-description">
-            <strong>High flows and a good bush-whack in the northern Los Padres</strong><br>
-            <a href="Articles/Article-11.html">Take a peek →</a>
-          </p>
-        </div>
-        <a href="Articles/Article-11.html" class="featured-image-link">
-          <img src="images/Article-11-11.JPG" alt="Trip Preview" class="featured-image" />
-        </a>
-      </div>
-    </section>
 
   </div>
 
   <script src="background-rotate.js?v=20260211-1"></script>
   <script src="featured-articles.js?v=20260211-1"></script>
+  <script src="photo-of-day.js?v=20260212-4"></script>
   <script src="moon-widget.js?v=20260211-4"></script>
-  <script src="sun-widget.js?v=20260211-5"></script>
+  <script src="sun-widget.js?v=20260212-1"></script>
+  <script src="weather-widget.js?v=20260212-2"></script>
 
   <div id="tracker-container">
     <script src="https://efreecode.com/js.js" id="eXF-thecutty-0" async defer></script>

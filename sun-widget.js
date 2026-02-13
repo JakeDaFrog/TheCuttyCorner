@@ -10,11 +10,9 @@
   }
 
   const STORAGE_KEY = "cutty_sun_widget_location";
-  const AUTO_LOCATION_ID = "auto";
 
   // Edit this list to your preferred locations.
   const LOCATION_OPTIONS = [
-    { id: AUTO_LOCATION_ID, label: "Auto (Current Location)" },
     { id: "bellingham", label: "Bellingham, WA", latitude: 48.7519, longitude: -122.4787, timeZone: "America/Los_Angeles" },
     { id: "berkeley", label: "Berkeley, CA", latitude: 37.8715, longitude: -122.2730, timeZone: "America/Los_Angeles" },
     { id: "big-sur", label: "Big Sur, CA", latitude: 36.2704, longitude: -121.8081, timeZone: "America/Los_Angeles" },
@@ -131,26 +129,6 @@
     return select;
   };
 
-  const fetchAutoLocation = async () => {
-    const geoRes = await fetch("https://ipwho.is/");
-    const geo = await geoRes.json();
-
-    if (!geo.success || !geo.latitude || !geo.longitude) {
-      throw new Error("Auto-location failed");
-    }
-
-    const city = geo.city || "Approximate location";
-    const region = geo.region || "";
-    return {
-      label: region ? `${city}, ${region}` : city,
-      latitude: Number(geo.latitude),
-      longitude: Number(geo.longitude),
-      timeZone: geo.timezone && geo.timezone.id
-        ? geo.timezone.id
-        : Intl.DateTimeFormat().resolvedOptions().timeZone
-    };
-  };
-
   const fetchSunTimes = async (latitude, longitude) => {
     const sunRes = await fetch(
       `https://api.sunrise-sunset.org/json?lat=${latitude}&lng=${longitude}&formatted=0`
@@ -164,21 +142,16 @@
 
   const loadForLocation = async (locationId) => {
     try {
-      let chosen;
-      if (locationId === AUTO_LOCATION_ID) {
-        chosen = await fetchAutoLocation();
-      } else {
-        const selected = LOCATION_OPTIONS.find((loc) => loc.id === locationId);
-        if (!selected || typeof selected.latitude !== "number" || typeof selected.longitude !== "number") {
-          throw new Error("Invalid selected location");
-        }
-        chosen = {
-          label: selected.label,
-          latitude: selected.latitude,
-          longitude: selected.longitude,
-          timeZone: selected.timeZone || Intl.DateTimeFormat().resolvedOptions().timeZone
-        };
+      const selected = LOCATION_OPTIONS.find((loc) => loc.id === locationId);
+      if (!selected || typeof selected.latitude !== "number" || typeof selected.longitude !== "number") {
+        throw new Error("Invalid selected location");
       }
+      const chosen = {
+        label: selected.label,
+        latitude: selected.latitude,
+        longitude: selected.longitude,
+        timeZone: selected.timeZone || Intl.DateTimeFormat().resolvedOptions().timeZone
+      };
 
       locationEl.textContent = chosen.label;
       drawDaylightWave(chosen.latitude);
@@ -194,7 +167,7 @@
   const init = async () => {
     const locationSelect = createLocationDropdown();
     const stored = localStorage.getItem(STORAGE_KEY);
-    const validStored = LOCATION_OPTIONS.some((loc) => loc.id === stored) ? stored : AUTO_LOCATION_ID;
+    const validStored = LOCATION_OPTIONS.some((loc) => loc.id === stored) ? stored : LOCATION_OPTIONS[0].id;
     locationSelect.value = validStored;
 
     locationSelect.addEventListener("change", async (event) => {
