@@ -1099,6 +1099,178 @@ nav ul li a:hover {
   }
 }
 
+/* =============================================
+   SEWING PAGE
+   ============================================= */
+
+/* Frog Bags header — logo centered, nav below */
+.frogbags-header {
+  display: flex !important;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  margin-bottom: 12px;
+}
+
+.frog-bags-logo {
+  display: block;
+  width: clamp(180px, 28vw, 340px);
+  height: auto;
+  margin: 0 auto;
+  border: 2px solid #5a9135;
+  box-shadow: 0 6px 12px #5a9135;
+}
+
+/* Bikepacking photo strip */
+.bikepack-strip {
+  position: relative;
+  width: 100%;
+  margin: 0 0 4px;
+  aspect-ratio: 16 / 7;
+  overflow: hidden;
+  background: #d9d3b8;
+  border: 2px solid #4f6f2f;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.28), inset 0 0 0 1px #efe4bf;
+}
+
+/* Ken Burns pan/zoom on bikepacking strip */
+@keyframes kb-zoom {
+  from { transform: scale(1); }
+  to   { transform: scale(1.04) translate(-0.6%, -0.3%); }
+}
+
+.bikepack-strip .ss-photo.ss-active {
+  animation: kb-zoom 5.5s ease-in-out forwards;
+}
+
+/* Intro section */
+.sewing-intro-section {
+  padding: 20px 20px 12px;
+}
+
+.sewing-intro-text {
+  margin: 0 0 0.9em;
+  font-size: clamp(0.9rem, 1.3vw, 1.05rem);
+  line-height: 1.7;
+  color: #333;
+}
+
+.sewing-intro-text:last-child {
+  margin-bottom: 0;
+}
+
+/* Projects section */
+.sewing-projects-section {
+  padding: 4px 20px 24px;
+}
+
+
+.sewing-project-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 22px;
+}
+
+@media screen and (max-width: 900px) {
+  .sewing-project-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media screen and (max-width: 560px) {
+  .sewing-project-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Project card */
+.sewing-project-card {
+  display: flex;
+  flex-direction: column;
+  background-color: #fff5d6;
+  border: 2px solid #4f6f2f;
+  padding: 14px 14px 10px;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.12);
+}
+
+.sewing-project-title {
+  font-family: 'Times New Roman', Times, serif;
+  font-size: clamp(0.95rem, 1.5vw, 1.15rem);
+  color: #2d4a18;
+  margin: 0 0 8px 0;
+  letter-spacing: 0.3px;
+  font-weight: bold;
+}
+
+.sewing-project-title a {
+  color: inherit;
+  text-decoration: underline;
+  text-decoration-color: #5a9135;
+}
+
+.sewing-project-title a:hover {
+  color: #5a9135;
+}
+
+/* Slideshow */
+.sewing-slideshow {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+  background: #d9d3b8;
+  border: 2px solid #4f6f2f;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.22), inset 0 0 0 1px #efe4bf;
+}
+
+.ss-photo {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  transition: opacity 0.85s ease;
+}
+
+.ss-photo.ss-active {
+  opacity: 1;
+}
+
+.ss-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 2;
+  background: rgba(0, 0, 0, 0.38);
+  color: #fff;
+  border: none;
+  padding: 0;
+  width: 32px;
+  height: 44px;
+  font-size: 1.2rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.18s;
+  line-height: 1;
+  user-select: none;
+}
+
+.ss-arrow:hover {
+  background: rgba(0, 0, 0, 0.62);
+}
+
+.ss-prev {
+  left: 0;
+}
+
+.ss-next {
+  right: 0;
+}
+
 /* Shared article media refinements */
 .article-page .section-box.bordered-box img {
   border: 1px solid #c7c7b0;
