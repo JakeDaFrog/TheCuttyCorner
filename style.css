@@ -5,6 +5,8 @@ body {
   padding: 0;
   font-family: 'Times New Roman', Times, serif;
   color: #000;
+  background-color: #2c3220;
+  background-image: url('images/Home-20.jpg');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -1232,6 +1234,7 @@ nav ul li a:hover {
   object-fit: cover;
   opacity: 0;
   transition: opacity 0.85s ease;
+  will-change: opacity;
 }
 
 .ss-photo.ss-active {
