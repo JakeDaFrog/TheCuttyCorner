@@ -6,12 +6,10 @@ body {
   font-family: 'Times New Roman', Times, serif;
   color: #000;
   background-color: #2c3220;
-  background-image: url('images/Home-20.jpg');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
   background-attachment: fixed;
-  transition: background-image 1s ease-in-out;
 }
 
 .page-narrow .floating-frame {
