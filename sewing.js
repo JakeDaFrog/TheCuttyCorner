@@ -2,16 +2,32 @@ document.addEventListener('DOMContentLoaded', function () {
 
   // Project cards — arrow navigation only
   document.querySelectorAll('.sewing-slideshow').forEach(function (ss) {
-    const photos = ss.querySelectorAll('.ss-photo');
+    const photos = Array.from(ss.querySelectorAll('.ss-photo'));
     if (photos.length <= 1) return;
 
-    let current = 0;
+    // Start at whichever image is marked active in the HTML
+    let current = photos.findIndex(function (p) { return p.classList.contains('ss-active'); });
+    if (current === -1) current = 0;
 
     function goTo(n) {
       photos[current].classList.remove('ss-active');
       current = (n + photos.length) % photos.length;
+      // Load image on demand if it hasn't been fetched yet
+      if (photos[current].dataset.src) {
+        photos[current].src = photos[current].dataset.src;
+        delete photos[current].dataset.src;
+      }
       photos[current].classList.add('ss-active');
     }
+
+    // Preload the neighbours of the initial active image
+    [current - 1, current + 1].forEach(function (i) {
+      var idx = (i + photos.length) % photos.length;
+      if (photos[idx].dataset.src) {
+        photos[idx].src = photos[idx].dataset.src;
+        delete photos[idx].dataset.src;
+      }
+    });
 
     var prev = ss.querySelector('.ss-prev');
     var next = ss.querySelector('.ss-next');

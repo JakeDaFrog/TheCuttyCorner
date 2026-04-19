@@ -1,0 +1,9 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(grep -E \"\\\\.\\(jpg|JPG|png|PNG|jpeg|JPEG\\)$\")",
+      "Bash(sips -g pixelWidth -g pixelHeight /Users/jakejackson/Documents/GitHub/TheCuttyCorner/images/sewing/my-hayduke/3.jpg /Users/jakejackson/Documents/GitHub/TheCuttyCorner/images/sewing/my-hayduke/4.jpg /Users/jakejackson/Documents/GitHub/TheCuttyCorner/images/sewing/abbys-bags/3.jpg)",
+      "Bash(chmod +x /Users/jakejackson/Documents/GitHub/TheCuttyCorner/compress-images.sh)"
+    ]
+  }
+}
