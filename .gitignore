@@ -16,3 +16,7 @@ ehthumbs.db
 *.swp
 *.swo
 images/.DS_Store
+
+# Claude Code / Cowork (user-specific config, contains absolute paths)
+.claude/
+
