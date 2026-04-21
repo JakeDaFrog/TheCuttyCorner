@@ -17,7 +17,8 @@ body {
   max-width: 920px;
 }
 
-.page-main .floating-frame {
+.page-main .floating-frame,
+.article-page .floating-frame {
   width: min(95%, 1100px);
   max-width: 1100px;
   background-color: #f3edd1;
