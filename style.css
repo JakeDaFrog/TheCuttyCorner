@@ -1289,3 +1289,45 @@ nav ul li a:hover {
   width: min(980px, 78%);
   margin: 0 auto 10px;
 }
+
+/* Article 13 photos */
+.article13-photo {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  border: 1px solid #c7c7b0;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.12);
+}
+
+.article13-hero .article13-photo {
+  width: min(960px, 86%);
+  margin: 0 auto;
+}
+
+.article13-single .article13-photo {
+  width: min(600px, 78%);
+  margin: 0 auto;
+}
+
+.article13-pair {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+  width: min(860px, 92%);
+  margin: 0 auto 6px;
+}
+
+.article13-pair .article13-photo {
+  width: calc(50% - 6px);
+  max-width: none;
+}
+
+@media screen and (max-width: 700px) {
+  .article13-pair {
+    flex-wrap: wrap;
+  }
+
+  .article13-pair .article13-photo {
+    width: 100%;
+  }
+}

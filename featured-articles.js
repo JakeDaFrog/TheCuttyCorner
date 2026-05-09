@@ -19,10 +19,10 @@ const featuredArticles = [
     image: "images/SecoRiver-1.jpeg"
   },
   {
-    title: "2025 Tour De Los Padres Bike and Gear Breakdown",
-    link: "Articles/Article-8.html",
-    quote: "Here is a video where I walk through my bikepacking setup and gear for the 2025 Tour de Los Padres, including a detailed spreadsheet of all equipment.",
-    image: "images/Article-8-1-.jpg"
+    title: "Tour de Los Padres 2026",
+    link: "Articles/Article-13.html",
+    quote: "Coming away from the ride I felt a sense of belonging and a deeper love for the South Los Padres. The wilderness is unforgiving and nearly inaccessible and having a body that allows me to travel through these places with the people I love is something I am so thankful for.",
+    image: "images/P1200231.JPG"
   },
   {
     title: "Getting Started With Bikepacking",
