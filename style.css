@@ -33,7 +33,7 @@ body {
   margin: 0 0 12px;
   box-sizing: border-box;
   border-color: #4f6f2f;
-  box-shadow: 0 6px 12px #5a9135;
+  box-shadow: 0 6px 12px #4f6f2f;
 }
 
 .page-main .articles-description {
@@ -69,7 +69,7 @@ body {
   margin: 0 0 12px;
   box-sizing: border-box;
   border-color: #4f6f2f;
-  box-shadow: 0 6px 12px #5a9135;
+  box-shadow: 0 6px 12px #4f6f2f;
 }
 
 .article-page .articles-description {
@@ -102,7 +102,7 @@ body {
   margin: 40px auto;
   background-color: #f2f2d2;
   padding: 20px;
-  border: 3px solid #5a9135;
+  border: 3px solid #4f6f2f;
   border-radius: 0px;
   box-shadow: 2px 2px 12px rgba(0, 0, 0, 0.3);
   box-sizing: border-box;
@@ -178,9 +178,9 @@ body {
   height: auto;
   display: block;
   margin: 0 auto 15px auto;
-  border: 2px solid #5a9135;
+  border: 2px solid #4f6f2f;
   border-radius: 0px;
-  box-shadow: 0 6px 12px #5a9135;
+  box-shadow: 0 6px 12px #4f6f2f;
 }
 
 .header-row .site-banner {
@@ -294,11 +294,11 @@ nav ul li {
 
 nav ul li a {
   text-decoration: none;
-  color: #5a9135;
+  color: #2d4a18;
   font-weight: bold;
   font-size: clamp(0.7rem, 1.5vw, 1.1rem);
   padding: 8px clamp(4px, 1.5vw, 16px);
-  border: 2px solid #5a9135;
+  border: 2px solid #4f6f2f;
   background-color: #fff5d6;
   transition: all 0.2s ease-in-out;
   display: block;
@@ -308,7 +308,7 @@ nav ul li a {
 }
 
 nav ul li a:hover {
-  background-color: #5a9135;
+  background-color: #2d4a18;
   color: #fff5d6;
   box-shadow: inset 0 0 0 2px #fff5d6;
 }
@@ -424,7 +424,7 @@ nav ul li a:hover {
 }
 
 .home-preview-v1.ntff-inspired .date-header {
-  color: #3e6225;
+  color: #2d4a18;
 }
 
 .home-preview-v1.ntff-inspired .section-box.bordered-box {
@@ -704,13 +704,13 @@ nav ul li a:hover {
 .section-box {
   margin-top: 15px;
   padding-top: 15px;
-  border-top: 2px solid #5a9135;
+  border-top: 2px solid #4f6f2f;
 }
 
 .section-box h2 {
   font-size: 2em;
   margin-bottom: 15px;
-  color: #5a9135;
+  color: #2d4a18;
 }
 
 .article-page .section-box h2 {
@@ -727,12 +727,12 @@ nav ul li a:hover {
 .articles-header h2 {
   margin: 0;
   font-size: 2em;
-  color: #5a9135;
+  color: #2d4a18;
 }
 
 .date-header {
   font-weight: bold;
-  color: #5a9135;
+  color: #2d4a18;
   font-size: 1rem;
 }
 
@@ -801,7 +801,7 @@ nav ul li a:hover {
   color: #333;
   text-align: center;
   background-color: #fff5d6;
-  border: 2px solid #5a9135;
+  border: 2px solid #4f6f2f;
   border-radius: 0px;
   box-shadow: 0 4px 8px rgba(90, 145, 53, 0.2);
   box-sizing: border-box;
@@ -820,7 +820,7 @@ nav ul li a:hover {
   color: #333;
   text-align: center;
   background-color: #fff5d6;
-  border: 2px solid #5a9135;
+  border: 2px solid #4f6f2f;
   border-radius: 0px;
   box-shadow: 0 4px 8px rgba(90, 145, 53, 0.2);
   box-sizing: border-box;
@@ -837,8 +837,8 @@ nav ul li a:hover {
 
 .trip-header {
   font-weight: bold;
-  color: #5a9135;
-  border-bottom: 2px solid #5a9135;
+  color: #2d4a18;
+  border-bottom: 2px solid #4f6f2f;
   padding-bottom: 5px;
   text-align: left;
   font-size: clamp(1rem, 1.4vw, 1.2rem);
@@ -1253,8 +1253,8 @@ nav ul li a:hover {
   width: clamp(180px, 28vw, 340px);
   height: auto;
   margin: 0 auto;
-  border: 2px solid #5a9135;
-  box-shadow: 0 6px 12px #5a9135;
+  border: 2px solid #4f6f2f;
+  box-shadow: 0 6px 12px #4f6f2f;
 }
 
 /* Bikepacking photo strip */
@@ -1341,11 +1341,11 @@ nav ul li a:hover {
 .sewing-project-title a {
   color: inherit;
   text-decoration: underline;
-  text-decoration-color: #5a9135;
+  text-decoration-color: #2d4a18;
 }
 
 .sewing-project-title a:hover {
-  color: #5a9135;
+  color: #2d4a18;
 }
 
 /* Slideshow */
