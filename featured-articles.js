@@ -1,5 +1,13 @@
-// Featured articles data - randomly selects one per page load
+// Featured articles data — newest article MUST be first in this array.
+// When you add a new article, add it at the TOP of this list. The homepage
+// "Newest Update" section always shows featuredArticles[0].
 const featuredArticles = [
+  {
+    title: "Tour de Los Padres 2026",
+    link: "Articles/Article-13.html",
+    quote: "Coming away from the ride I felt a sense of belonging and a deeper love for the South Los Padres. The wilderness is unforgiving and nearly inaccessible and having a body that allows me to travel through these places with the people I love is something I am so thankful for.",
+    image: "images/P1200231.JPG"
+  },
   {
     title: "Winter Hot Springs Bikepacking",
     link: "Articles/Article-12.html",
@@ -19,12 +27,6 @@ const featuredArticles = [
     image: "images/SecoRiver-1.jpeg"
   },
   {
-    title: "Tour de Los Padres 2026",
-    link: "Articles/Article-13.html",
-    quote: "Coming away from the ride I felt a sense of belonging and a deeper love for the South Los Padres. The wilderness is unforgiving and nearly inaccessible and having a body that allows me to travel through these places with the people I love is something I am so thankful for.",
-    image: "images/P1200231.JPG"
-  },
-  {
     title: "Getting Started With Bikepacking",
     link: "Articles/Article-1.html",
     quote: "So, you want to get started in the wonderful world of bikepacking? This guide will equip you with all the knowledge and skills you will need to conquer your first bikepacking trip.",
@@ -38,27 +40,19 @@ const featuredArticles = [
   }
 ];
 
-// Get a random featured article
-function getRandomFeaturedArticle() {
-  return featuredArticles[Math.floor(Math.random() * featuredArticles.length)];
-}
-
-// Populate the featured article section
+// Populate the newest update section with featuredArticles[0]
 function populateFeaturedArticle() {
-  const article = getRandomFeaturedArticle();
-  
-  // Get the featured content div
+  const article = featuredArticles[0];
+
   const contentDiv = document.querySelector('.featured-content');
   const imageLink = document.querySelector('.featured-image-link');
   const image = document.querySelector('.featured-image');
-  
+
   if (contentDiv && imageLink && image) {
-    // Update heading and text
-    contentDiv.querySelector('h2').textContent = 'Read This!';
-    contentDiv.querySelector('.featured-description').innerHTML = 
+    contentDiv.querySelector('h2').textContent = 'Newest Update';
+    contentDiv.querySelector('.featured-description').innerHTML =
       `<strong>${article.title}</strong><br><em>"${article.quote}"</em><br><a href="${article.link}">Take a peek →</a>`;
-    
-    // Update image
+
     image.src = article.image;
     image.alt = article.title;
     imageLink.href = article.link;

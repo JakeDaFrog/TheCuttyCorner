@@ -27,10 +27,10 @@ body {
 }
 
 .page-main .site-banner {
-  width: min(96%, 1020px);
+  width: 100%;
   max-width: 100%;
   display: block;
-  margin: 0 auto 12px;
+  margin: 0 0 12px;
   box-sizing: border-box;
   border-color: #4f6f2f;
   box-shadow: 0 6px 12px #5a9135;
@@ -63,10 +63,10 @@ body {
 }
 
 .article-page .site-banner {
-  width: min(96%, 1020px);
+  width: 100%;
   max-width: 100%;
   display: block;
-  margin: 0 auto 12px;
+  margin: 0 0 12px;
   box-sizing: border-box;
   border-color: #4f6f2f;
   box-shadow: 0 6px 12px #5a9135;
@@ -354,8 +354,8 @@ nav ul li a:hover {
 }
 
 .home-preview-v1.ntff-inspired .site-banner {
-  width: min(96%, 1020px);
-  margin: 0 auto 12px;
+  width: 100%;
+  margin: 0 0 12px;
 }
 
 .home-preview-v1.ntff-inspired .moon-widget,
@@ -431,7 +431,7 @@ nav ul li a:hover {
   background-color: transparent;
   border: none;
   box-shadow: none;
-  padding: 20px;
+  padding: 20px 20px 20px 0;
 }
 
 .home-preview-v1.ntff-inspired .home-main-layout {
@@ -463,6 +463,30 @@ nav ul li a:hover {
   display: none;
 }
 
+.home-preview-v1.ntff-inspired .sidebar-nav {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.home-preview-v1.ntff-inspired .sidebar-nav ul {
+  flex-direction: column;
+  align-items: stretch;
+  gap: 4px;
+  width: 100%;
+}
+
+.home-preview-v1.ntff-inspired .sidebar-nav ul li {
+  width: 100%;
+}
+
+.home-preview-v1.ntff-inspired .sidebar-nav ul li a {
+  display: block;
+  text-align: center;
+  width: 100%;
+  box-sizing: border-box;
+}
+
 .home-preview-v1.ntff-inspired .photo-of-day-card {
   width: 100%;
   box-sizing: border-box;
@@ -476,7 +500,7 @@ nav ul li a:hover {
   box-sizing: border-box;
   text-decoration: none;
   position: relative;
-  aspect-ratio: 5 / 4;
+  aspect-ratio: 3 / 2;
   overflow: hidden;
   border: 2px solid #4f6f2f;
   box-shadow: 0 8px 18px rgba(0, 0, 0, 0.34), 0 2px 0 rgba(0, 0, 0, 0.2), inset 0 0 0 1px #efe4bf;
@@ -604,6 +628,41 @@ nav ul li a:hover {
 .home-preview-v1.ntff-inspired .featured-article {
   background: transparent;
   padding: 2px 0 10px;
+  display: flex;
+  flex-direction: row;
+  gap: 16px;
+  align-items: flex-start;
+}
+
+.home-preview-v1.ntff-inspired .featured-image-link {
+  display: block;
+  width: 45%;
+  flex-shrink: 0;
+  margin-bottom: 0;
+}
+
+.home-preview-v1.ntff-inspired .featured-image {
+  width: 100%;
+  aspect-ratio: 3 / 2;
+  object-fit: cover;
+  display: block;
+  border: 2px solid #4f6f2f;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.22);
+}
+
+.home-preview-v1.ntff-inspired .featured-content {
+  flex: 1;
+  padding: 0 2px;
+}
+
+@media screen and (max-width: 600px) {
+  .home-preview-v1.ntff-inspired .featured-article {
+    flex-direction: column;
+  }
+
+  .home-preview-v1.ntff-inspired .featured-image-link {
+    width: 100%;
+  }
 }
 
 @media screen and (max-width: 860px) {
@@ -621,6 +680,16 @@ nav ul li a:hover {
   .home-preview-v1.ntff-inspired .home-sidebar::before,
   .home-preview-v1.ntff-inspired .home-sidebar::after {
     display: none;
+  }
+
+  .home-preview-v1.ntff-inspired .sidebar-nav ul {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .home-preview-v1.ntff-inspired .sidebar-nav ul li {
+    width: auto;
   }
 }
 
@@ -1048,6 +1117,67 @@ nav ul li a:hover {
   margin: 0 auto 14px;
   border: 1px solid #c7c7b0;
   box-shadow: 0 4px 10px #8f8f8f;
+}
+
+.home-header-photo {
+  width: 100%;
+  height: 320px;
+  object-fit: cover;
+  object-position: center 70%;
+  display: block;
+  margin: 0 0 16px;
+  border: 2px solid #4f6f2f;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.45);
+}
+
+.sidebar-contact {
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.sidebar-contact-header {
+  background: linear-gradient(180deg, #fff6db 0%, #efe2ba 100%);
+  border: 2px solid #4f6f2f;
+  color: #2f4a1a;
+  font-weight: bold;
+  font-family: 'Times New Roman', Times, serif;
+  font-size: clamp(0.68rem, 1.25vw, 0.98rem);
+  text-align: center;
+  padding: 7px 12px;
+  letter-spacing: 0.5px;
+  box-shadow: inset 0 1px 0 #fff8e6, 0 1px 2px rgba(0, 0, 0, 0.16);
+}
+
+.sidebar-contact-body {
+  border: 2px solid #4f6f2f;
+  border-top: none;
+  background-color: #f3edd1;
+  padding: 8px 10px;
+  font-size: clamp(0.7rem, 1.1vw, 0.88rem);
+  line-height: 1.45;
+  color: #333;
+}
+
+.sidebar-contact-body p {
+  margin: 0;
+}
+
+.sidebar-contact-body a {
+  color: #2f4a1a;
+}
+
+.sidebar-links {
+  margin: 0;
+  padding: 0 0 0 14px;
+  list-style: disc;
+}
+
+.sidebar-links li {
+  margin-bottom: 4px;
+}
+
+.sidebar-links li:last-child {
+  margin-bottom: 0;
 }
 
 /* Article 12 photo refinements */
