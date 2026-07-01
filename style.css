@@ -328,15 +328,15 @@ nav ul li a:hover {
   right: 0;
   top: 50%;
   transform: translateY(-50%) skewX(-9deg);
-  height: 4px;
+  height: 8px;
   background:
     linear-gradient(to bottom,
       rgba(219, 236, 204, 0.92) 0,
-      rgba(219, 236, 204, 0.92) 1px,
-      rgba(90, 145, 53, 0.78) 1px,
-      rgba(90, 145, 53, 0.78) 3px,
-      rgba(53, 86, 29, 0.72) 3px,
-      rgba(53, 86, 29, 0.72) 4px);
+      rgba(219, 236, 204, 0.92) 2px,
+      rgba(90, 145, 53, 0.78) 2px,
+      rgba(90, 145, 53, 0.78) 6px,
+      rgba(53, 86, 29, 0.72) 6px,
+      rgba(53, 86, 29, 0.72) 8px);
 }
 
 .home-preview-v1 .section-box {
