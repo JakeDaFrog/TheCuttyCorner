@@ -3,6 +3,12 @@
 // "Newest Update" section always shows featuredArticles[0].
 const featuredArticles = [
   {
+    title: "Golden Trout Wilderness Flyfishing",
+    link: "Articles/Article-14.html",
+    quote: "After discussing a summer trip for the last 6 months or so, we settled on chasing some native trout via backpack. After we all finished our work on Thursday, Chad, Jeremy and I piled into Chad's Prius and set off towards the Eastern Sierra.",
+    image: "images/P1200740.JPG"
+  },
+  {
     title: "Tour de Los Padres 2026",
     link: "Articles/Article-13.html",
     quote: "Coming away from the ride I felt a sense of belonging and a deeper love for the South Los Padres. The wilderness is unforgiving and nearly inaccessible and having a body that allows me to travel through these places with the people I love is something I am so thankful for.",

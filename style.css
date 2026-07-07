@@ -1468,3 +1468,45 @@ nav ul li a:hover {
     width: 100%;
   }
 }
+
+/* Article 14 photos */
+.article14-photo {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  border: 1px solid #c7c7b0;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.12);
+}
+
+.article14-hero .article14-photo {
+  width: 100%;
+  margin: 0 auto;
+}
+
+.article14-single .article14-photo {
+  width: min(600px, 78%);
+  margin: 0 auto;
+}
+
+.article14-pair {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+  width: 100%;
+  margin: 0 auto 6px;
+}
+
+.article14-pair .article14-photo {
+  width: calc(50% - 6px);
+  max-width: none;
+}
+
+@media screen and (max-width: 700px) {
+  .article14-pair {
+    flex-wrap: wrap;
+  }
+
+  .article14-pair .article14-photo {
+    width: 100%;
+  }
+}
