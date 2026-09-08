@@ -396,7 +396,6 @@ nav ul li a:hover {
 
 .home-preview-v1.ntff-inspired nav ul li a:hover {
   background: linear-gradient(180deg, #5f8139 0%, #46642a 100%);
-  color: #f6ecd1;
   text-decoration: none;
   box-shadow: inset 0 0 0 1px #e6d8ac;
 }
@@ -1246,16 +1245,6 @@ nav ul li a:hover {
   gap: 10px;
   width: 100%;
   margin-bottom: 12px;
-}
-
-.frog-bags-logo {
-  display: block;
-  width: clamp(180px, 28vw, 340px);
-  height: auto;
-  margin: 0 auto;
-  border-radius: 50%;
-  border: 2px solid #4f6f2f;
-  box-shadow: 0 6px 12px #4f6f2f;
 }
 
 /* Bikepacking photo strip */
